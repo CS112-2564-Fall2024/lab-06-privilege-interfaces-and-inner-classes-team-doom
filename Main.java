@@ -37,7 +37,7 @@ public class Main
 		Person p1 = new Person("Amira", "I am a Syrian refugee.", 40);
 		Person p2 = new Person("D'Andra", "I am an African-American trans woman.", -20);
 		Person p3 = new Person("Jennifer", "I am a New Yorker", 140);
-		Person p4 = new Person("Pete", "I am a guy from Pennsylvania", 200);
+		Person p4 = new Person("Pete", "I am a guy from ur mum's house.", 200);
 		Person self = new Person();
 		Person[] people = {p1, p2, p3, p4, self};
 		boolean done = false;
@@ -90,7 +90,37 @@ public class Main
 		}while(!done);
 
 		System.out.println("Thank you for exploring your privilege, it can be uncomfortable but it's a crucial step" +
-			"in our own growth and self-reflection. We appreciate you taking that journey with us! :D");
+				"in our own growth and self-reflection. We appreciate you taking that journey with us! :D");
+		Person temporaryperson1 = new Person();
+		Person temporaryperson2 = new Person();
+		for (int i = 0; i < people.length - 1; i++) {
+			for (int j = 0; j < people.length - 1; j++) {
+				if (people[j].compareTo(people[j + 1]) > 0) {
+					temporaryperson1 = people[j];
+					people[j + 1] = people[j + 1];
+					people[j + 1] = temporaryperson1;
+
+				}
+				/**
+				 * if (people[i].compareTo(people[j]) == 1) {
+				 * if (i < j) {
+				 * 
+				 * }
+				 * This is theortical code, and not what the teacher did.
+				 * //it attempted to use i and j for the comparisons, rather than just j.
+				 * //this would have requried extra manipulation.
+				 * //so, we need people[i] to move closer/to zero in the array, "to the left",
+				 * in the array. We need it to be in front of people[j].
+				 * //imagine if i was 1, and j was zero, and compareTo returns 1.
+				 * //We need i to trade places with J.
+				 * //BUT if i was 0, and j was 1, then we wouldn't want them to trade.
+				 * //Double comparison? check to see if it's already in front of j. If it is, do
+				 * nothing.
+				 **/
+
+			}
+		}
+	}
 	}
 
 	/***** TODO: (Part 2) upgrade method to ask user for pronouns and background info *****/
