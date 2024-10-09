@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import Person.identity;
+
 public class Main
 {
 	public static final String[] STATEMENTS = {
@@ -34,10 +36,10 @@ public class Main
 	public static void main(String[] args)
 	{
 		// DECLARATION + INITIALIZATION
-		Person p1 = new Person("Amira", "I am a Syrian refugee.", 40);
-		Person p2 = new Person("D'Andra", "I am an African-American trans woman.", -20);
-		Person p3 = new Person("Jennifer", "I am a New Yorker", 140);
-		Person p4 = new Person("Pete", "I am a guy from ur mum's house.", 200);
+		Person p1 = new Person("Amira","she/she", "I am a Syrian refugee.", 40);
+		Person p2 = new Person("D'Andra","her/her", "I am an African-American trans woman.", -20);
+		Person p3 = new Person("Jennifer", "her/she","I am a New Yorker", 140);
+		Person p4 = new Person("Pete","he/they/them/him", "I am a guy from ur mum's house.", 200);
 		Person self = new Person();
 		Person[] people = {p1, p2, p3, p4, self};
 		boolean done = false;
@@ -121,23 +123,23 @@ public class Main
 			}
 		}
 	}
-	}
+	
 
 	/***** TODO: (Part 2) upgrade method to ask user for pronouns and background info *****/
 	public static void fillInfo(Person person){
 		//sets default privilege prior to questionnaire to 100
-		String name, story;
+		String name, prounons, storry;
 		
 		System.out.println("What is your name? ");
 		name = keyboard.nextLine();
 		System.out.println("\nHello " + name + ", write a small self-identifying statement about yourself "
 				+ "and your background and identity, this can be anything you like!\n"
 				+ "For example: I'm a [nationality / place of origin / ethnicity / sexuality / gender expression / etc.]...");
-		System.out.println("Tell us about yourself: ");
-		story = keyboard.nextLine();
-		
-		person.setName(name);
-		person.setStory(story);
+		System.out.println("give me your pronouns: ");
+		prounons = keyboard.nextLine();
+		System.out.println("*burp* give me your story: ");
+		storry = keyboard.nextLine();
+		person.setAll(name, prounons, storry, 100);
 	}
 
 	public static int doPrivilegeQuestionnaire() {
